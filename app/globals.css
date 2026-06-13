@@ -17,12 +17,10 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* custom button style */
 .btn-primary {
   @apply px-6 py-3 rounded-full font-semibold transition-all duration-200 shadow-lg;
   background: var(--primary);
@@ -34,7 +32,6 @@ html {
   box-shadow: 0 10px 25px -5px rgba(59,130,246,0.5);
 }
 
-/* card style */
 .card {
   @apply rounded-2xl p-6 transition-all duration-300;
   background: var(--card-bg);
@@ -48,7 +45,6 @@ html {
   box-shadow: 0 20px 30px -12px rgba(0,0,0,0.5);
 }
 
-/* fade-up animation */
 .fade-up {
   animation: fadeUp 0.6s ease-out forwards;
 }
@@ -63,7 +59,6 @@ html {
   }
 }
 
-/* floating hire button */
 .floating-hire {
   @apply fixed bottom-6 right-6 z-50 px-5 py-2.5 rounded-full font-bold shadow-2xl transition-all duration-200;
   background: #10b981;
