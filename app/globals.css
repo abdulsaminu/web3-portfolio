@@ -1,8 +1,7 @@
 @import "tailwindcss";
-
-/* Arc.io brand kit extended for dashboard header */
 @import url('https://fonts.googleapis.com/css2?family=Besley:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
+/* Arc.io brand kit extended for dashboard header */
 :root {
   --primary: #5427C8;
   --primary-hover: #441fa3;
@@ -123,7 +122,7 @@ a:hover { color: var(--black); text-decoration: underline; }
 @media (min-width: 768px) { .grid-tight { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .grid-tight { grid-template-columns: repeat(3, 1fr); } }
 
-/* Tabs (for proof page) */
+/* Tabs */
 .tab-bar {
   display: flex;
   gap: 0.5rem;
@@ -167,8 +166,7 @@ a:hover { color: var(--black); text-decoration: underline; }
   padding: 2rem 1.5rem;
 }
 
-/* ---------- DASHBOARD HEADER STYLES ---------- */
-/* Header wrapper: flexible, with larger clickable tabs */
+/* Dashboard header styles */
 .dashboard-header {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
@@ -189,7 +187,6 @@ a:hover { color: var(--black); text-decoration: underline; }
   padding: 0.75rem 1.5rem;
 }
 
-/* Logo / Home area — distinct from nav tabs */
 .logo-area {
   flex-shrink: 0;
 }
@@ -213,17 +210,15 @@ a:hover { color: var(--black); text-decoration: underline; }
   color: var(--primary);
 }
 
-/* Navigation tabs group — takes at least 50% width on large screens */
 .nav-tabs {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
   justify-content: center;
   flex: 1;
-  min-width: 50%; /* ensures at least 50% of header width */
+  min-width: 50%;
 }
 
-/* Dashboard-style tab buttons: large, pill-shaped, bold */
 .dash-tab {
   padding: 0.6rem 1.8rem;
   font-size: 1.1rem;
@@ -241,7 +236,6 @@ a:hover { color: var(--black); text-decoration: underline; }
   transform: translateY(-1px);
   text-decoration: none;
 }
-/* Active tab (optional: for current page) — we can add later with usePathname */
 .dash-tab.active {
   background: var(--primary);
   color: white;
@@ -252,7 +246,6 @@ a:hover { color: var(--black); text-decoration: underline; }
   transform: none;
 }
 
-/* Floating hire button */
 .floating-hire {
   position: fixed;
   bottom: 1.5rem;
@@ -273,7 +266,6 @@ a:hover { color: var(--black); text-decoration: underline; }
   text-decoration: none;
 }
 
-/* Tech badges */
 .tech-badge {
   background: rgba(84, 39, 200, 0.1);
   padding: 0.2rem 0.7rem;
@@ -296,7 +288,6 @@ a:hover { color: var(--black); text-decoration: underline; }
   font-size: var(--text-body);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
