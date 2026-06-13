@@ -9,17 +9,17 @@ const proofs = [
     description: 'Complete construction milestone escrow flow – client funds, contractor submits, evaluator releases payment.',
     badge: 'Smart Contract',
     category: 'Contract',
-    link: 'https://arc.arkdev.net/tx/0x722dc4c246df94c0c6645f34abd8773e514249c9b7cca72f77d8a8d4f3939e00',
-    linkLabel: '📜 View Create Job Tx'
+    // Main create job transaction (all related transactions are linked in the explorer)
+    txLink: 'https://testnet.arcscan.app/tx/0x722dc4c246df94c0c6645f34abd8773e514249c9b7cca72f77d8a8d4f3939e00'
   },
   {
     title: 'Archie NFT Mint',
     image: '/images/archie-nft-mint.png',
-    description: 'First NFT badge (Token #0) minted to my wallet – proof of building on Arc.',
+    description: 'First NFT badge (Token #0) minted to my wallet – proof of building on Arc in May 2026.',
     badge: 'NFT',
     category: 'NFT',
-    link: 'https://arc.arkdev.net/address/0x6004b26ea22ecd72cc4bddf0328289b9360d80de',
-    linkLabel: '🖼️ View NFT Contract'
+    // Contract address where the NFT is deployed
+    txLink: 'https://testnet.arcscan.app/address/0x6004b26ea22ecd72cc4bddf0328289b9360d80de'
   },
   {
     title: 'ARCH Token Deployment',
@@ -27,27 +27,26 @@ const proofs = [
     description: 'ERC-20 token with 1,000,000 supply deployed via OpenZeppelin.',
     badge: 'Token',
     category: 'Token',
-    link: 'https://arc.arkdev.net/address/0x828d7AA5b2A82d130B02E073D88856cAB3Ef6287',
-    linkLabel: '💰 View Token Contract'
+    // Contract address where the ARCH token is deployed
+    txLink: 'https://testnet.arcscan.app/address/0x828d7AA5b2A82d130B02E073D88856cAB3Ef6287'
   },
   {
     title: 'SoSo Dashboard Signals',
     image: '/images/soso-dashboard-signals.png',
-    description: 'Real-time market intelligence dashboard – off‑chain analytics tool.',
+    description: 'Real-time market intelligence dashboard (off-chain analytics application).',
     badge: 'Dashboard',
     category: 'Dashboard',
-    link: 'https://sosovalue.xyz/',
-    linkLabel: '📊 Open Dashboard'
+    txLink: 'https://sosovalue.xyz/'
   },
   {
     title: 'Unified Balance Transfer',
     image: '/images/unified-balance-transfer.png',
-    description: 'Cross‑chain spend: delegate deposited 2 USDC on Base Sepolia, then spent 0.50 USDC on Arc.',
+    description: 'Cross-chain spend: delegate deposited 2 USDC on Base Sepolia, then spent 0.50 USDC on Arc.',
     badge: 'DeFi',
     category: 'DeFi',
-    link: 'https://arc.arkdev.net/tx/0x304e08be04e29460a34eec92d040c413486ec62238b28f2dd88a5e58445b77a8',
-    linkLabel: '🔁 View Spend Transaction'
-  }
+    // Spend transaction on Arc
+    txLink: 'https://testnet.arcscan.app/tx/0x304e08be04e29460a34eec92d040c413486ec62238b28f2dd88a5e58445b77a8'
+  },
 ];
 
 const categories = ['All', 'Contract', 'NFT', 'Token', 'Dashboard', 'DeFi'];
@@ -60,7 +59,7 @@ export default function ProofPage() {
     <div className="container-main py-6 md:py-10">
       <div className="fade-up mb-8 md:mb-12">
         <h1 className="section-title">🔍 On‑Chain Proof</h1>
-        <p className="section-subtitle">Every card leads to a verifiable on‑chain record.</p>
+        <p className="section-subtitle">Every card represents a real on-chain interaction, verifiable on the Arc Testnet Explorer.</p>
       </div>
 
       <div className="tab-bar">
@@ -81,14 +80,14 @@ export default function ProofPage() {
               <Image src={proof.image} alt={proof.title} fill className="object-cover hover:scale-105 transition duration-300" />
             </div>
             <h3 className="text-xl font-bold tracking-tight mb-1">{proof.title}</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-2">{proof.description}</p>
+            <p className="text-gray-600 text-sm leading-relaxed">{proof.description}</p>
             <a
-              href={proof.link}
+              href={proof.txLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 mt-2 text-primary font-medium hover:text-black text-sm"
+              className="inline-flex items-center gap-1 mt-4 text-primary font-medium hover:text-black text-sm"
             >
-              {proof.linkLabel} →
+              📜 {proof.title === 'SoSo Dashboard Signals' ? 'View Dashboard →' : 'View Transaction →'}
             </a>
           </div>
         ))}
