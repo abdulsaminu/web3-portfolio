@@ -1,66 +1,33 @@
-import Navbar from "@/components/Navbar";
-
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-
-      <Navbar />
-
-      <section className="px-6 py-24 max-w-3xl mx-auto text-center">
-
-        {/* HEADER */}
-        <h1 className="text-4xl font-bold">
-          Let’s Build Something Real
-        </h1>
-
-        <p className="text-gray-400 mt-4 leading-relaxed">
-          I work on production Web3 systems — DeFi dashboards, smart contract interfaces,
-          and stablecoin infrastructure. Open to freelance, remote roles, and contract work.
-        </p>
-
-        {/* CONTACT BLOCK */}
-        <div className="mt-12 space-y-4 text-gray-300">
-
-          <p>
-            GitHub: https://github.com/abdulsaminu
-          </p>
-
-          <p>
-            X (Twitter): @abdul_sd01
-          </p>
-
-          <p>
-            Focus: Arc Testnet • ERC-8183 • Circle SDK • DeFi Engineering
-          </p>
-
+    <main className="min-h-screen flex items-center justify-center px-6 py-20">
+      <div className="card max-w-lg w-full text-center fade-up">
+        <h1 className="text-3xl font-bold mb-2">📬 Let&apos;s Build</h1>
+        <p className="text-gray-400 mb-6">Web3 projects need on‑chain experts. I&apos;m ready.</p>
+        
+        <div className="space-y-4 text-left">
+          <div className="bg-black/30 p-3 rounded-xl">
+            <p className="text-sm text-gray-400">Wallet (EVM)</p>
+            <p className="font-mono text-sm break-all">0xYourWalletHere... (replace with real address)</p>
+          </div>
+          <div className="bg-black/30 p-3 rounded-xl">
+            <p className="text-sm text-gray-400">Email</p>
+            <p className="font-mono">abdulsaminu@gmail.com</p>
+          </div>
+          <div className="bg-black/30 p-3 rounded-xl">
+            <p className="text-sm text-gray-400">X (Twitter)</p>
+            <p className="font-mono">@abdul_sd01</p>
+          </div>
+          <div className="flex justify-center gap-4 pt-4">
+            <a href="https://github.com/yourusername" target="_blank" className="btn-primary !px-4">🐙 GitHub</a>
+            <a href="https://twitter.com/abdul_sd01" target="_blank" className="btn-primary !px-4 bg-sky-600 hover:bg-sky-700">🐦 X</a>
+            <a href="https://linkedin.com/in/yourname" target="_blank" className="btn-primary !px-4 bg-blue-700 hover:bg-blue-800">🔗 LinkedIn</a>
+          </div>
         </div>
-
-        {/* CTA */}
-        <div className="mt-12 flex justify-center gap-4 flex-wrap">
-
-          <a
-            href="mailto:your-email@example.com"
-            className="px-6 py-3 bg-white text-black rounded-lg font-medium hover:opacity-90 transition"
-          >
-            Email Me
-          </a>
-
-          <a
-            href="/projects"
-            className="px-6 py-3 border border-gray-700 rounded-lg hover:border-gray-500 transition"
-          >
-            View Work
-          </a>
-
-        </div>
-
-        {/* MICRO TRUST LINE */}
-        <p className="mt-14 text-xs text-gray-600">
-          Response time: usually within 24–48 hours
+        <p className="text-xs text-gray-500 mt-6">
+          📍 Replace wallet address, GitHub, and LinkedIn links with your own.
         </p>
-
-      </section>
-
+      </div>
     </main>
   );
 }

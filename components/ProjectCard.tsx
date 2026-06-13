@@ -1,116 +1,42 @@
-type Project = {
+interface ProjectCardProps {
   title: string;
   description: string;
-  image?: string;
-  problem?: string;
-  solution?: string;
   technologies: string[];
-  live?: string;
-  github?: string;
-  demo?: string;
-};
+  links: {
+    live?: string;
+    github?: string;
+    demo?: string;
+  };
+}
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({ title, description, technologies, links }: ProjectCardProps) {
   return (
-    <div className="border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition">
-
-      {/* IMAGE */}
-      {project.image ? (
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-48 object-cover"
-        />
-      ) : (
-        <div className="w-full h-48 bg-gray-900 flex items-center justify-center text-gray-600 text-sm">
-          No Preview Available
-        </div>
-      )}
-
-      <div className="p-6">
-
-        {/* TITLE */}
-        <h2 className="text-xl font-bold">
-          {project.title}
-        </h2>
-
-        {/* DESCRIPTION */}
-        <p className="text-gray-400 mt-3 leading-relaxed">
-          {project.description}
-        </p>
-
-        {/* PROBLEM */}
-        {project.problem && (
-          <div className="mt-4">
-            <p className="text-xs text-gray-500">Problem</p>
-            <p className="text-sm text-gray-300">
-              {project.problem}
-            </p>
-          </div>
+    <div className="card group">
+      <h3 className="text-2xl font-bold mb-2">{title}</h3>
+      <p className="text-gray-300 mb-4">{description}</p>
+      <div className="flex flex-wrap gap-2 mb-4">
+        {technologies.map((tech) => (
+          <span key={tech} className="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-300">
+            {tech}
+          </span>
+        ))}
+      </div>
+      <div className="flex gap-3 text-sm">
+        {links.live && (
+          <a href={links.live} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+            🌐 Live
+          </a>
         )}
-
-        {/* SOLUTION */}
-        {project.solution && (
-          <div className="mt-3">
-            <p className="text-xs text-gray-500">Solution</p>
-            <p className="text-sm text-gray-300">
-              {project.solution}
-            </p>
-          </div>
+        {links.github && (
+          <a href={links.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+            🐙 GitHub
+          </a>
         )}
-
-        {/* TECHNOLOGIES */}
-        <div className="flex flex-wrap gap-2 mt-4">
-          {project.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="text-xs px-3 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-300"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        {/* LINKS */}
-        <div className="flex gap-4 mt-6 text-sm">
-
-          {project.live && (
-            <a
-              href={project.live}
-              target="_blank"
-              className="text-blue-400 hover:underline"
-            >
-              Live →
-            </a>
-          )}
-
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              className="text-blue-400 hover:underline"
-            >
-              GitHub →
-            </a>
-          )}
-
-          {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              className="text-blue-400 hover:underline"
-            >
-              Demo →
-            </a>
-          )}
-
-        </div>
-
-        {/* TRUST MICRO-LINE */}
-        <div className="mt-5 text-xs text-gray-600">
-          Verified build • Real system implementation • Production-style architecture
-        </div>
-
+        {links.demo && (
+          <a href={links.demo} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+            🎥 Demo
+          </a>
+        )}
       </div>
     </div>
   );

@@ -1,9 +1,13 @@
-import "./globals.css";
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import Link from 'next/link';
 
-export const metadata = {
-  title: "Web3 Developer | DeFi & Smart Contract Systems",
-  description:
-    "Building on-chain applications, DeFi dashboards, and escrow systems with real blockchain execution.",
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'Web3 Portfolio | On-Chain Proof',
+  description: 'DeFi + Smart Contract Developer – real on-chain execution proofs',
 };
 
 export default function RootLayout({
@@ -13,10 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white antialiased">
-        <div className="min-h-screen bg-gradient-to-b from-black via-black to-zinc-950">
-          {children}
-        </div>
+      <body className={inter.className}>
+        {children}
+        {/* floating Hire Me button */}
+        <Link href="/contact" className="floating-hire">
+          💼 Hire Me
+        </Link>
       </body>
     </html>
   );
