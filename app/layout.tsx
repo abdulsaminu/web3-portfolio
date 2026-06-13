@@ -17,14 +17,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={jakarta.className}>
         <header className="dashboard-header">
           <div className="header-container">
-            {/* Home area — distinct from tabs */}
+            {/* Home button — distinct from other tabs */}
             <div className="logo-area">
               <Link href="/" className="logo-link">
-                abdul<span>.saminu</span>
+                🏠 Home
               </Link>
             </div>
 
-            {/* Three main tabs — large, clickable, at least 50% width */}
+            {/* Three main tabs — large, clickable */}
             <div className="nav-tabs">
               <Link
                 href="/proof"
