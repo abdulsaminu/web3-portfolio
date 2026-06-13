@@ -3,10 +3,10 @@ import ProjectCard from '@/components/ProjectCard';
 
 export default function ProjectsPage() {
   return (
-    <div className="container-main py-10">
-      <div className="fade-up mb-10">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">📦 Projects</h1>
-        <p className="text-gray-400 text-lg mt-1">Built, deployed, shipped.</p>
+    <div className="container-main py-6 md:py-10">
+      <div className="fade-up mb-8 md:mb-12">
+        <h1 className="section-title">📦 Projects</h1>
+        <p className="section-subtitle">Built, deployed, shipped.</p>
       </div>
 
       <div className="grid-tight">

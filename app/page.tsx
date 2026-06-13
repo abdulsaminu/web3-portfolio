@@ -4,19 +4,19 @@ export default function Home() {
   return (
     <div className="container-main min-h-[80vh] flex items-center fade-up">
       <div className="max-w-2xl">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
           Web3{' '}
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary to-lavender bg-clip-text text-transparent">
             Frontend
           </span>{' '}
           Architect
         </h1>
-        <p className="text-xl text-gray-400 mt-4 font-medium">
+        <p className="text-xl text-gray-600 mt-4 font-medium">
           DeFi • Smart Contracts • On-Chain Proofs
         </p>
-        <p className="text-gray-500 mt-2 leading-relaxed">
+        <p className="text-gray-500 mt-2 leading-relaxed max-w-xl">
           I build with receipts. Every line of code is backed by a{' '}
-          <span className="text-accent font-medium">real transaction</span> on Arc testnet.
+          <span className="text-primary font-medium">real transaction</span> on Arc testnet.
         </p>
         <div className="flex flex-wrap gap-3 mt-10">
           <Link href="/proof" className="btn-primary">
@@ -26,7 +26,7 @@ export default function Home() {
             📦 Browse Projects
           </Link>
           <Link href="/contact" className="btn-secondary">
-            ✉️ Let’s Talk
+            ✉️ Let's Talk
           </Link>
         </div>
       </div>

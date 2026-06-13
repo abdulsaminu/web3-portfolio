@@ -1,19 +1,34 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
+/* === Arc.io Official Brand Kit — https://ar.io/brand-kit/ === */
+@import url('https://fonts.googleapis.com/css2?family=Besley:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* arc.io palette - dark, deep, professional */
-  --primary: #5427C8;
-  --primary-hover: #6B42D4;
-  --accent: #DFD6F7;
-  --black: #0A0A0F;
-  --card-bg: rgba(18, 18, 26, 0.8);
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-glow: rgba(84, 39, 200, 0.3);
+  /* Arc.io official palette */
+  --primary: #5427C8;        /* Primary brand color for CTAs and links — EXACT MATCH */
+  --lavender: #DFD6F7;       /* Secondary color for accents */
+  --black: #23232D;          /* Primary text color — EXACT MATCH */
+  --white: #FFFFFF;          /* Background and light text — EXACT MATCH */
+  --card-bg: #F0F0F0;        /* Card backgrounds — EXACT MATCH */
+
+  /* Arc.io typography system */
+  --text-h1: 41.89px;
+  --text-h2: 32px;
+  --text-h3: 25.89px;
+  --text-h4: 18.72px;
+  --text-body: 16px;
+  --text-small: 14px;
+
+  --line-height-h1: 50px;
+  --line-height-h2: 40px;
+  --line-height-h3: 30px;
+  --line-height-h4: 24px;
+  --line-height-body: 18.7px;
+
+  --letter-spacing: -0.02em;
 }
 
-/* Base */
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
@@ -25,51 +40,56 @@ html {
 }
 
 body {
-  background: var(--black);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #E4E4E7;
-  -webkit-font-smoothing: antialiased;
-  background-image: radial-gradient(circle at 25% 0%, rgba(84, 39, 200, 0.03) 0%, transparent 50%);
+  background: var(--white);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: var(--text-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing);
+  color: var(--black);
 }
 
-/* Typography */
-h1, h2, h3, .headline {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: white;
+/* Headlines — Arc.io uses Besley (antique slab serif) for all display text */
+h1, h2, h3, h4, .headline {
+  font-family: 'Besley', Georgia, serif;
+  font-weight: 800;
+  letter-spacing: var(--letter-spacing);
+  margin-bottom: 0.5rem;
 }
 
 h1 {
-  font-size: 3.5rem;
-  line-height: 1.1;
+  font-size: var(--text-h1);
+  line-height: var(--line-height-h1);
 }
 
 h2 {
-  font-size: 2rem;
-  line-height: 1.2;
+  font-size: var(--text-h2);
+  line-height: var(--line-height-h2);
 }
 
 h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.3;
+  font-size: var(--text-h3);
+  line-height: var(--line-height-h3);
 }
 
-/* Links */
+h4 {
+  font-size: var(--text-h4);
+  line-height: var(--line-height-h4);
+  font-weight: 700;
+}
+
+/* Links — Arc.io uses primary purple for all interactive elements */
 a {
-  color: var(--accent);
+  color: var(--primary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: white;
+  color: var(--black);
+  text-decoration: underline;
 }
 
-/* Buttons */
+/* Buttons — from the design system */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -78,16 +98,17 @@ a:hover {
   color: white;
   padding: 0.75rem 1.8rem;
   border-radius: 9999px;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
   transition: all 0.2s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
+  border: none;
+  cursor: pointer;
 }
-
 .btn-primary:hover {
-  background: var(--primary-hover);
+  background: #441fa3;
   transform: translateY(-1px);
+  text-decoration: none;
 }
 
 .btn-secondary {
@@ -95,92 +116,85 @@ a:hover {
   align-items: center;
   gap: 0.5rem;
   background: transparent;
-  color: #E4E4E7;
+  color: var(--black);
   padding: 0.75rem 1.8rem;
   border-radius: 9999px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid rgba(35, 35, 45, 0.2);
   transition: all 0.2s;
-  white-space: nowrap;
+  cursor: pointer;
 }
-
 .btn-secondary:hover {
   border-color: var(--primary);
-  background: rgba(84, 39, 200, 0.1);
-  color: white;
+  color: var(--primary);
+  background: rgba(84, 39, 200, 0.04);
+  transform: translateY(-1px);
+  text-decoration: none;
 }
 
-/* Cards */
+/* Cards — Arc.io card pattern uses F0F0F0 background, minimal borders, no shadows */
 .card {
   background: var(--card-bg);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--border-subtle);
-  border-radius: 1rem;
+  border-radius: 1.2rem;
   padding: 1.25rem;
   transition: all 0.25s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
-
 .card:hover {
-  border-color: var(--border-glow);
-  transform: translateY(-2px);
-  background: rgba(20, 20, 30, 0.9);
+  transform: translateY(-3px);
+  border-color: rgba(84, 39, 200, 0.3);
+  background: #e8e8e8;
 }
 
-/* Grid Layouts */
+/* Grid layouts — clean, responsive */
 .grid-tight {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
-
 @media (min-width: 768px) {
   .grid-tight {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (min-width: 1024px) {
   .grid-tight {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Tab Navigation */
+/* Tab navigation — Arc.io uses clean tab patterns */
 .tab-bar {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(35, 35, 45, 0.1);
   padding-bottom: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
-
 .tab-button {
-  padding: 0.4rem 1.2rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 2rem;
   font-weight: 500;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   background: transparent;
-  color: #a1a1aa;
+  color: #5a5a6e;
   transition: all 0.2s;
   cursor: pointer;
 }
-
 .tab-button.active {
   background: var(--primary);
   color: white;
 }
-
 .tab-button:hover:not(.active) {
-  background: rgba(84, 39, 200, 0.15);
-  color: white;
+  background: rgba(84, 39, 200, 0.08);
+  color: var(--primary);
 }
 
-/* Animations */
+/* Animations — subtle, professional */
 .fade-up {
   animation: fadeUp 0.5s ease-out forwards;
 }
-
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -192,76 +206,76 @@ a:hover {
   }
 }
 
-/* Layout Container */
+/* Layout container — clean max-width and padding */
 .container-main {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
-/* Navigation */
+/* Navigation — Arc.io minimalist header */
 .nav-link {
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
-  color: #a1a1aa;
+  color: var(--black);
   transition: all 0.2s;
   font-size: 0.9rem;
 }
-
 .nav-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
+  background: rgba(84, 39, 200, 0.06);
+  color: var(--primary);
+  text-decoration: none;
 }
 
-/* Floating Hire Button */
+/* Floating Hire button — subtle, on-brand */
 .floating-hire {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
   z-index: 50;
-  background: #18181B;
+  background: var(--black);
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 2rem;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.85rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.2s;
 }
-
 .floating-hire:hover {
   background: var(--primary);
-  border-color: var(--primary);
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
-/* Utility Classes */
+/* Tech badges — subtle, technical */
 .tech-badge {
-  background: rgba(84, 39, 200, 0.15);
+  background: rgba(84, 39, 200, 0.1);
   padding: 0.2rem 0.7rem;
   border-radius: 1rem;
   font-size: 0.7rem;
   font-weight: 500;
-  color: var(--accent);
+  color: var(--primary);
   letter-spacing: -0.01em;
 }
 
+/* Image containers — clean, minimal */
 .image-container {
   border-radius: 0.75rem;
   overflow: hidden;
-  background: #0A0A0F;
+  background: var(--card-bg);
 }
 
+/* Section styling */
 .section-title {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: var(--text-h2);
+  font-weight: 800;
   margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--letter-spacing);
 }
-
 .section-subtitle {
-  color: #a1a1aa;
+  color: #5a5a6e;
   margin-bottom: 2rem;
-  font-size: 1rem;
+  font-size: var(--text-body);
 }

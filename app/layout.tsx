@@ -1,9 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] });
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Abdul Saminu | Web3 Architect',
@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <header className="sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-white/5">
+      <body className={jakarta.className}>
+        <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100">
           <div className="container-main flex justify-between items-center py-3">
-            <Link href="/" className="text-xl font-semibold tracking-tight">
+            <Link href="/" className="text-xl font-bold font-serif tracking-tight">
               abdul<span className="text-primary">.saminu</span>
             </Link>
             <nav className="flex gap-1">
