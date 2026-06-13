@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --primary: #3b82f6;
@@ -22,9 +20,13 @@ html {
 }
 
 .btn-primary {
-  @apply px-6 py-3 rounded-full font-semibold transition-all duration-200 shadow-lg;
   background: var(--primary);
   color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
 }
 .btn-primary:hover {
   background: var(--primary-hover);
@@ -33,10 +35,12 @@ html {
 }
 
 .card {
-  @apply rounded-2xl p-6 transition-all duration-300;
   background: var(--card-bg);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  transition: all 0.3s;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 .card:hover {
@@ -60,9 +64,17 @@ html {
 }
 
 .floating-hire {
-  @apply fixed bottom-6 right-6 z-50 px-5 py-2.5 rounded-full font-bold shadow-2xl transition-all duration-200;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
   background: #10b981;
   color: white;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+  transition: all 0.2s;
 }
 .floating-hire:hover {
   background: #059669;
