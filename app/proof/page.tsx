@@ -2,14 +2,13 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-// Your transaction-backed evidence — replace with real tx links
 const proofs = [
-  { title: 'ERC-8183 Job Lifecycle', image: '/images/erc8183-job-lifecycle.png', description: 'Escrow system for cross-agent payments on Arc testnet.', txLink: 'https://arc.arkdev.net/tx/', badge: 'Smart Contract', category: 'Contract' },
-  { title: 'Archie NFT Mint', image: '/images/archie-nft-mint.png', description: 'NFT deployment with on-chain metadata.', txLink: 'https://arc.arkdev.net/tx/', badge: 'NFT', category: 'NFT' },
-  { title: 'ARCH Token Deployment', image: '/images/arch-token-deployment.png', description: 'ERC-20 token with custom minting logic.', txLink: 'https://arc.arkdev.net/tx/', badge: 'Token', category: 'Token' },
-  { title: 'SoSo Dashboard Signals', image: '/images/soso-dashboard-signals.png', description: 'Real-time market intelligence dashboard.', txLink: 'https://sosovalue.xyz/', badge: 'Dashboard', category: 'Dashboard' },
-  { title: 'Akindo Buildathon Submission', image: '/images/akindo-buildathon-submission.png', description: '🏆 Prize-winning on-chain agent system – earned real rewards.', txLink: 'https://arc.arkdev.net/tx/', badge: '🏆 Winner', category: 'Contract' },
-  { title: 'Unified Balance Transfer', image: '/images/unified-balance-transfer.png', description: 'Cross‑protocol balance aggregation.', txLink: 'https://arc.arkdev.net/tx/', badge: 'DeFi', category: 'DeFi' },
+  { title: 'ERC-8183 Job Lifecycle', image: '/images/erc8183-job-lifecycle.png', description: 'Escrow system for cross-agent payments on Arc testnet.', badge: 'Smart Contract', category: 'Contract', txLink: null },
+  { title: 'Archie NFT Mint', image: '/images/archie-nft-mint.png', description: 'NFT deployment with on-chain metadata.', badge: 'NFT', category: 'NFT', txLink: null },
+  { title: 'ARCH Token Deployment', image: '/images/arch-token-deployment.png', description: 'ERC-20 token with custom minting logic.', badge: 'Token', category: 'Token', txLink: null },
+  { title: 'SoSo Dashboard Signals', image: '/images/soso-dashboard-signals.png', description: 'Real-time market intelligence dashboard.', badge: 'Dashboard', category: 'Dashboard', txLink: null },
+  { title: 'Akindo Buildathon Submission', image: '/images/akindo-buildathon-submission.png', description: 'On-chain agent system submitted to Akindo Buildathon.', badge: '📁 Submission', category: 'Contract', txLink: null },
+  { title: 'Unified Balance Transfer', image: '/images/unified-balance-transfer.png', description: 'Cross‑protocol balance aggregation.', badge: 'DeFi', category: 'DeFi', txLink: null },
 ];
 
 const categories = ['All', 'Contract', 'NFT', 'Token', 'Dashboard', 'DeFi'];
@@ -22,7 +21,7 @@ export default function ProofPage() {
     <div className="container-main py-6 md:py-10">
       <div className="fade-up mb-8 md:mb-12">
         <h1 className="section-title">🔍 On‑Chain Proof</h1>
-        <p className="section-subtitle">Every card = real transaction. No fakes.</p>
+        <p className="section-subtitle">Every card represents a real on-chain interaction.</p>
       </div>
 
       <div className="tab-bar">
@@ -44,16 +43,17 @@ export default function ProofPage() {
             </div>
             <h3 className="text-xl font-bold tracking-tight mb-1">{proof.title}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">{proof.description}</p>
-            <a href={proof.txLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-4 text-primary font-medium hover:text-black text-sm">
-              📜 View Transaction →
-            </a>
+            {proof.txLink ? (
+              <a href={proof.txLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-4 text-primary font-medium hover:text-black text-sm">
+                📜 View Transaction →
+              </a>
+            ) : (
+              <span className="inline-block mt-4 text-gray-400 text-xs">Transaction link available upon request</span>
+            )}
           </div>
         ))}
       </div>
-      <div className="text-center text-gray-500 text-sm mt-12 pt-6 border-t border-gray-200">
-        All transactions verifiable on Arc testnet. Questions?{' '}
-        <a href="https://twitter.com/abdul_sd01" target="_blank" className="text-primary">@abdul_sd01</a>
-      </div>
+      {/* Footer removed as requested */}
     </div>
   );
 }

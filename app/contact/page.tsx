@@ -2,8 +2,7 @@ export default function ContactPage() {
   return (
     <div className="container-main min-h-[70vh] flex items-center justify-center py-12">
       <div className="card max-w-lg w-full fade-up bg-white border border-gray-200">
-        <h1 className="text-lg font-bold mb-2 tracking-tight text-black">📬 Let's Build</h1>
-        <p className="text-black text-base mb-8">Web3 projects need on‑chain experts. I'm ready.</p>
+        <h1 className="text-lg font-bold mb-4 tracking-tight text-black">📬 Let's Build</h1>
 
         <div className="space-y-5">
           {/* Wallet */}
@@ -20,14 +19,9 @@ export default function ContactPage() {
             <p className="text-base font-medium text-black">abdulsaminu@gmail.com</p>
           </div>
 
-          {/* X (Twitter) */}
-          <div>
-            <p className="text-black text-xs uppercase tracking-wider mb-1">X (Twitter)</p>
-            <p className="text-base font-medium text-black">@abdul_sd01</p>
-          </div>
-
-          {/* Social buttons with brand colors, no background */}
+          {/* Social buttons with official brand colors */}
           <div className="flex flex-wrap gap-3 pt-3">
+            {/* GitHub */}
             <a
               href="https://github.com/abdulsaminu"
               target="_blank"
@@ -38,6 +32,7 @@ export default function ContactPage() {
               </svg>
               GitHub
             </a>
+            {/* X (Twitter) */}
             <a
               href="https://twitter.com/abdul_sd01"
               target="_blank"
@@ -48,6 +43,7 @@ export default function ContactPage() {
               </svg>
               X
             </a>
+            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/abdulrahman-saminu-b2948a105/"
               target="_blank"
