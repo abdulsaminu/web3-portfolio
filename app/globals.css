@@ -1,17 +1,90 @@
-body {
-  background: #0a0a0a;
-  color: white;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   BASE FOUNDATION
+========================= */
+
+:root {
+  color-scheme: dark;
 }
 
-/* smooth text rendering */
-html {
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #ffffff;
+
+  /* smoother text rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -scroll-behavior: smooth;
+
+  /* subtle depth texture */
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+  background-attachment: fixed;
 }
 
-/* nicer links */
+/* =========================
+   TYPOGRAPHY BASELINE
+========================= */
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.02em;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* =========================
+   SECTION SPACING SYSTEM
+========================= */
+
+section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* =========================
+   GLOBAL UI ENHANCEMENTS
+========================= */
+
+/* smooth transitions everywhere */
+* {
+  transition: all 0.2s ease;
+}
+
+/* links */
 a {
-  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+/* hover clarity */
+a:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   CARD SYSTEM (GLOBAL USE)
+========================= */
+
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* hover lift */
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }

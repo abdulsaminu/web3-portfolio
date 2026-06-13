@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Web3 Portfolio | DeFi & Smart Contract Developer",
+  title: "Web3 Developer | DeFi & Smart Contract Systems",
   description:
-    "Web3 frontend developer building DeFi dashboards, escrow systems, and on-chain applications.",
+    "Building on-chain applications, DeFi dashboards, and escrow systems with real blockchain execution.",
 };
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-white antialiased">
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen bg-gradient-to-b from-black via-black to-zinc-950">
           {children}
         </div>
       </body>
