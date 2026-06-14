@@ -15,8 +15,7 @@ export default function Home() {
           DeFi • Smart Contracts • On-Chain Proofs
         </p>
         <p className="text-gray-500 mt-2 leading-relaxed">
-          I build with receipts. Every line of code is backed by a{' '}
-          <span className="text-primary font-medium">real transaction</span> on Arc testnet.
+          Every line of code is backed by a real transaction on‑chain.
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-10">
           <Link href="/proof" className="btn-primary">
