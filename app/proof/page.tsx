@@ -54,7 +54,7 @@ export default function ProofPage() {
   return (
     <div className="container-main py-6 md:py-10">
       <div className="fade-up text-center mb-8 md:mb-12">
-        <h1 className="section-title">🔍 On‑Chain Proof</h1>
+        <h1 className="text-[10px] font-bold tracking-tight">🔍 On‑Chain Proof</h1>
         <p className="section-subtitle">Every card represents a real on-chain interaction, verifiable on the Arc Testnet Explorer.</p>
       </div>
 
@@ -75,7 +75,7 @@ export default function ProofPage() {
             <div className="relative h-44 w-full mb-4 rounded-lg overflow-hidden bg-gray-100 border border-gray-200">
               <Image src={proof.image} alt={proof.title} fill className="object-cover hover:scale-105 transition duration-300" />
             </div>
-            <h3 className="text-xl font-bold tracking-tight mb-1">{proof.title}</h3>
+            <h3 className="text-[10px] font-bold tracking-tight mb-1 uppercase">{proof.title}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">{proof.description}</p>
             <a
               href={proof.txLink}
