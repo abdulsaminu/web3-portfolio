@@ -24,14 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </Link>
             </div>
 
-            {/* Three main tabs with improved icons */}
+            {/* Three main tabs — new order: Projects (left), Proof (middle), Contact (right) */}
             <div className="nav-tabs">
-              <Link
-                href="/proof"
-                className={`dash-tab ${isActive('/proof') ? 'active' : ''}`}
-              >
-                🔍 Proof
-              </Link>
               <Link
                 href="/projects"
                 className={`dash-tab ${isActive('/projects') ? 'active' : ''}`}
@@ -41,6 +35,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
                 Projects
+              </Link>
+              <Link
+                href="/proof"
+                className={`dash-tab ${isActive('/proof') ? 'active' : ''}`}
+              >
+                🔍 Proof
               </Link>
               <Link
                 href="/contact"
